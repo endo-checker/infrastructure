@@ -11,3 +11,7 @@ resource "azuread_application_federated_identity_credential" "repo" {
   issuer                = "https://token.actions.githubusercontent.com"
   subject               = "repo:${local.repo_name}:environment:${var.environment}"
 }
+
+locals {
+  repo_name = "endo-checker/${var.repo}"
+}

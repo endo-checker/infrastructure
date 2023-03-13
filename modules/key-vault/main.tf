@@ -16,13 +16,13 @@ resource "azurerm_key_vault" "apps" {
     bypass                     = "AzureServices"
     virtual_network_subnet_ids = [var.subnet_id]
     ip_rules = [
-      "210.54.238.207/32" # Andrew Weston
+      "210.54.238.207/32" # Zachary Weston
     ]
   }
   purge_protection_enabled    = true
   enabled_for_disk_encryption = true
 
-  # Andrew Weston
+  # Zachary Weston
   access_policy {
     tenant_id          = var.azure_secret.tenant_id
     object_id          = "78e4c655-726b-41f3-8305-0b3557d382a9"

@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    organization = "Endo-Checker"
+    organization = "zachs-test"
     hostname     = "app.terraform.io"
     workspaces {
       name = "platform"
@@ -39,14 +39,14 @@ module "vnet" {
   log_analytics_id = module.insights.log_analytics_id
 }
 
-# DNS zone
-module "dns" {
-  source         = "./modules/dns"
-  namespace      = local.namespace
-  resource_group = azurerm_resource_group.platform
-  subdomain      = "endo-checker.io"
-  cnames         = var.cnames
-}
+# # DNS zone
+# module "dns" {
+#   source         = "./modules/dns"
+#   namespace      = local.namespace
+#   resource_group = azurerm_resource_group.platform
+#   subdomain      = "endo-checker.io"
+#   cnames         = var.cnames
+# }
 
 # # UserAssigned identities 
 # module "identity" {
@@ -108,19 +108,19 @@ data "azuread_application" "sp" {
   display_name = "sp-${local.namespace}"
 }
 
-# module "github" {
-#   source = "./modules/github"
+module "github" {
+  source = "./modules/github"
 
-#   for_each = toset([
-#     "issuance"
-#   ])
+  for_each = toset([
+    "patient"
+  ])
 
-#   namespace      = local.namespace
-#   resource_group = azurerm_resource_group.platform
-#   azure_secret   = var.azure_secret
-#   github_secret  = var.github_secret
-#   repo           = each.key
-#   app_obj_id     = data.azuread_application.sp.object_id
-#   env            = local.env
-#   environment    = local.environment
-# }
+  namespace      = local.namespace
+  resource_group = azurerm_resource_group.platform
+  azure_secret   = var.azure_secret
+  github_secret  = var.github_secret
+  repo           = each.key
+  app_obj_id     = data.azuread_application.sp.object_id
+  env            = local.env
+  environment    = local.environment
+}
