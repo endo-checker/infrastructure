@@ -13,6 +13,7 @@ resource "azurerm_log_analytics_workspace" "platform" {
   daily_quota_gb    = 5
 }
 
+
 resource "azurerm_application_insights" "platform" {
   name                = "appi-${var.namespace}"
   location            = var.resource_group.location
