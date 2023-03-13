@@ -52,17 +52,17 @@ resource "azurerm_monitor_diagnostic_setting" "keyvault" {
   log_analytics_workspace_id = var.log_analytics_id
   # log_analytics_destination_type = "Dedicated"
 
-  log {
+  enabled_log {
     category_group = "allLogs"
-    enabled        = false
+    
     retention_policy {
       days    = 0
       enabled = false
     }
   }
-  log {
+  enabled_log {
     category_group = "audit"
-    enabled        = true
+  
     retention_policy {
       days    = 0
       enabled = false
