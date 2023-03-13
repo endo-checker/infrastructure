@@ -33,8 +33,8 @@ variable "azure_secret" {
 #   })
 # }
 
-# variable "github_secret" {
-#   type = object({
-#     token = string
-#   })
-# }
+variable "github_secret" {
+  type = object({
+    token = string
+  })
+}
