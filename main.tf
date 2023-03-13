@@ -104,23 +104,23 @@ module "container-apps" {
 
 # Configure GitHub repos
 # - read once rather than inside repo loop below
-data "azuread_application" "sp" {
-  display_name = "sp-${local.namespace}"
-}
+# data "azuread_application" "sp" {
+#   display_name = "sp-${local.namespace}"
+# }
 
-module "github" {
-  source = "./modules/github"
+# module "github" {
+#   source = "./modules/github"
 
-  for_each = toset([
-    "patient"
-  ])
+#   for_each = toset([
+#     "patient"
+#   ])
 
-  namespace      = local.namespace
-  resource_group = azurerm_resource_group.platform
-  azure_secret   = var.azure_secret
-  github_secret  = var.github_secret
-  repo           = each.key
-  app_obj_id     = data.azuread_application.sp.object_id
-  env            = local.env
-  environment    = local.environment
-}
+#   namespace      = local.namespace
+#   resource_group = azurerm_resource_group.platform
+#   azure_secret   = var.azure_secret
+#   github_secret  = var.github_secret
+#   repo           = each.key
+#   app_obj_id     = data.azuread_application.sp.object_id
+#   env            = local.env
+#   environment    = local.environment
+# }
