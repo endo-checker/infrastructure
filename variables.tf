@@ -15,9 +15,9 @@ variable "azure_secret" {
   })
 }
 
-variable "cnames" {
-  type = map(string)
-}
+# variable "cnames" {
+#   type = map(string)
+# }
 
 # ------------------------------------------
 # Variable set vars
@@ -33,14 +33,8 @@ variable "cnames" {
 #   })
 # }
 
-# variable "github_secret" {
-#   type = object({
-#     token = string
-#   })
-# }
-
-# variable "sendgrid_secret" {
-#   type = object({
-#     api_key = string
-#   })
-# }
+variable "github_secret" {
+  type = object({
+    token = string
+  })
+}

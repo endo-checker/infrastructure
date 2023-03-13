@@ -14,6 +14,6 @@ variable "subdomain" {
   type = string
 }
 
-variable "cnames" {
-  type = map(string)
-}
+# variable "cnames" {
+#   type = map(string)
+# }

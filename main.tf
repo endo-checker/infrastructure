@@ -14,7 +14,7 @@ data "azurerm_subscription" "current" {}
 locals {
   environment = terraform.workspace
   env         = terraform.workspace
-  namespace   = "platform" # "endo-checker-${local.env}"
+  namespace   = "platform" 
   location    = "Australia East"
 }
 
@@ -48,12 +48,12 @@ module "vnet" {
 #   cnames         = var.cnames
 # }
 
-# # UserAssigned identities 
-# module "identity" {
-#   source         = "./modules/identity"
-#   namespace      = local.namespace
-#   resource_group = azurerm_resource_group.platform
-# }
+# UserAssigned identities 
+module "identity" {
+  source         = "./modules/identity"
+  namespace      = local.namespace
+  resource_group = azurerm_resource_group.platform
+}
 
 # # Key vault
 # module "key-vault" {

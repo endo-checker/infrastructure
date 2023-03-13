@@ -20,7 +20,7 @@ terraform untaint module.elastic.ec_deployment.yente
 # -----------------------------------------------------------------------------
 # Import state
 # -----------------------------------------------------------------------------
-terraform import 'azurerm_resource_group.app' "/subscriptions/1278fa29-0ee5-4f10-a568-d00d37a86e03/resourceGroups/app-ticc-dev-ae-rg"
+terraform import 'azurerm_resource_group.platform' "/subscriptions/2da318e2-604b-4f60-8984-b801b824a602/resourceGroups/rg-platform"
 
 # mongodb
 terraform import 'module.mongodb.mongodbatlas_project.app' "625648897160cc761bec3ffa"
