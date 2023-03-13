@@ -39,6 +39,7 @@ module "vnet" {
   log_analytics_id = module.insights.log_analytics_id
 }
 
+
 # # DNS zone
 # module "dns" {
 #   source         = "./modules/dns"
