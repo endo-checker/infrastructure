@@ -23,15 +23,15 @@ variable "azure_secret" {
 # Variable set vars
 # ------------------------------------------
 
-# variable "atlas_secret" {
-#   type = object({
-#     org_id      = string
-#     public_key  = string
-#     private_key = string
-#     db_user     = string
-#     db_secret   = string
-#   })
-# }
+variable "atlas_secret" {
+  type = object({
+    org_id      = string
+    public_key  = string
+    private_key = string
+    db_user     = string
+    db_secret   = string
+  })
+}
 
 variable "github_secret" {
   type = object({
