@@ -24,7 +24,7 @@ terraform import 'azurerm_resource_group.platform' "/subscriptions/2da318e2-604b
 
 # mongodb
 terraform import 'module.mongodb.mongodbatlas_project.app' "625648897160cc761bec3ffa"
-terraform import 'module.mongodb.mongodbatlas_advanced_cluster.app' "63215cefa0008e463ca280e3-app"
+terraform import 'module.mongodb.mongodbatlas_cluster.app' "63215cefa0008e463ca280e3-app"
 # {project_id}-{private_link_id}-{provider_name}-{region}
 terraform import 'module.mongodb.mongodbatlas_privatelink_endpoint.app' "625648897160cc761bec3ffa-62f1e20b92f5575ad89966ca-AZURE-australiaeast"
 # {project_id}--{private_link_id}--{endpoint_service_id}--{provider_name}

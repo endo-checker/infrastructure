@@ -63,25 +63,18 @@ resource "mongodbatlas_cluster" "app" {
     num_shards = 1
     zone_name  = "ZoneName managed by Terraform"
 
-    region_configs {
-      electable_specs {
-        instance_size = "M10"
-        node_count    = 3
-      }
-      provider_name = "AZURE"
-      priority      = 7
-      region_name   = "AUSTRALIA_EAST"
-      auto_scaling {
-        compute_enabled            = true
-        compute_min_instance_size  = "M10"
-        compute_max_instance_size  = "M20"
-        compute_scale_down_enabled = true
-        disk_gb_enabled            = true
-      }
+    regions_config {
+      priority        = 7
+      region_name     = "AUSTRALIA_EAST"
+      electable_nodes = 3
+      read_only_nodes = 0
     }
+   
   }
 
   lifecycle {
     prevent_destroy = true
   }
+   provider_instance_size_name = "M40"
+    provider_name               = "AZURE"
 }

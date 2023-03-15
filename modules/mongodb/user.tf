@@ -12,7 +12,7 @@ resource "mongodbatlas_database_user" "app" {
   }
 
   scopes {
-    name = mongodbatlas_advanced_cluster.app.name
+    name = mongodbatlas_cluster.app.name
     type = "CLUSTER"
   }
 }

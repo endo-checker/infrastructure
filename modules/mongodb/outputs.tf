@@ -1,6 +1,6 @@
 
 locals {
-  private_endpoint = concat(mongodbatlas_advanced_cluster.app.connection_strings[0].private_endpoint, tolist([{ srv_connection_string : "" }]))
+  private_endpoint = concat(mongodbatlas_cluster.app.connection_strings[0].private_endpoint, tolist([{ srv_connection_string : "" }]))
 }
 
 # return private endpoint cnn string
