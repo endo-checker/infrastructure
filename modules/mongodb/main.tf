@@ -13,16 +13,16 @@ resource "mongodbatlas_project" "app" {
   org_id = var.atlas_secret.org_id
   # project_owner_id = ""
 
-  # developers
-  teams {
-    team_id    = "640fbb3d3b70804145eb8308"
-    role_names = ["GROUP_DATA_ACCESS_READ_WRITE"]
-  }
-  # administrators
-  teams {
-    team_id    = "640fbb3d3b70804145eb8308"
-    role_names = ["GROUP_OWNER"]
-  }
+  # # developers
+  # teams {
+  #   team_id    = "640fbb3d3b70804145eb8308"
+  #   role_names = ["GROUP_DATA_ACCESS_READ_WRITE"]
+  # }
+  # # administrators
+  # teams {
+  #   team_id    = "640fbb3d3b70804145eb8308"
+  #   role_names = ["GROUP_OWNER"]
+  # }
 
 
   lifecycle {
@@ -69,12 +69,12 @@ resource "mongodbatlas_cluster" "app" {
       electable_nodes = 3
       read_only_nodes = 0
     }
-   
+
   }
 
   lifecycle {
     prevent_destroy = true
   }
-   provider_instance_size_name = "M40"
-    provider_name               = "AZURE"
+  provider_instance_size_name = "M40"
+  provider_name               = "AZURE"
 }
