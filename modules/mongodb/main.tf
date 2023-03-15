@@ -24,6 +24,7 @@ resource "mongodbatlas_project" "app" {
     role_names = ["GROUP_OWNER"]
   }
 
+
   lifecycle {
     prevent_destroy = true
   }
