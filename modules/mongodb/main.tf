@@ -11,18 +11,18 @@ terraform {
 resource "mongodbatlas_project" "app" {
   name   = "prj-${var.namespace}"
   org_id = var.atlas_secret.org_id
-  # project_owner_id = "<OWNER_ACCOUNT_ID>"
+  # project_owner_id = ""
 
-  # developers
-  teams {
-    team_id    = "640fbb3d3b70804145eb8308"
-    role_names = ["GROUP_DATA_ACCESS_READ_WRITE"]
-  }
-  # administrators
-  teams {
-    team_id    = "640fbb3d3b70804145eb8308"
-    role_names = ["GROUP_OWNER"]
-  }
+  # # developers
+  # teams {
+  #   team_id    = "640fbb3d3b70804145eb8308"
+  #   role_names = ["GROUP_DATA_ACCESS_READ_WRITE"]
+  # }
+  # # administrators
+  # teams {
+  #   team_id    = "640fbb3d3b70804145eb8308"
+  #   role_names = ["GROUP_OWNER"]
+  # }
 
 
   lifecycle {
