@@ -23,3 +23,12 @@ variable "atlas_secret" {
 variable "subnet_id" {
   type = string
 }
+
+# variable "azure_secret" {
+#   type = object({
+#     client_id     = string
+#     client_secret = string
+#     tenant_id     = string
+#     subscription_id = string
+#   })
+# }
