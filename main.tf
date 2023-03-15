@@ -92,16 +92,16 @@ module "mongodb" {
   subnet_id      = module.vnet.subnets.infrastructure_id
 }
 
-# # Static sites
-# module "web" {
-#   source         = "./modules/web"
-#   namespace      = local.namespace
-#   resource_group = azurerm_resource_group.platform
+# Static sites
+module "web" {
+  source         = "./modules/web"
+  namespace      = local.namespace
+  resource_group = azurerm_resource_group.platform
 
-#   for_each  = toset(["portal"])
-#   subdomain = module.dns.dns_name
-#   site_name = each.key
-# }
+  for_each  = toset(["portal"])
+  subdomain = ""
+  site_name = each.key
+}
 
 # Configure GitHub repos
 # - read once rather than inside repo loop below
