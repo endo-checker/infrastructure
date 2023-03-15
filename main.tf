@@ -83,14 +83,14 @@ module "container-apps" {
   # managed_identity = module.identity.apps
 }
 
-# # MongoDB Atlas
-# module "mongodb" {
-#   source         = "./modules/mongodb"
-#   namespace      = local.namespace
-#   resource_group = azurerm_resource_group.platform
-#   atlas_secret   = var.atlas_secret
-#   subnet_id      = module.vnet.subnets.infrastructure_id
-# }
+# MongoDB Atlas
+module "mongodb" {
+  source         = "./modules/mongodb"
+  namespace      = local.namespace
+  resource_group = azurerm_resource_group.platform
+  atlas_secret   = var.atlas_secret
+  subnet_id      = module.vnet.subnets.infrastructure_id
+}
 
 # # Static sites
 # module "web" {
