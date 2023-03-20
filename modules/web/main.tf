@@ -7,8 +7,9 @@ resource "azurerm_static_site" "site" {
   location            = "westus2" # var.resource_group.location
   resource_group_name = var.resource_group.name
 
-  sku_tier = "Standard"
-  sku_size = "Standard"
+  // keep plan free
+  sku_tier = "Free"
+  sku_size = "Free"
 }
 
 resource "azurerm_dns_cname_record" "site" {
