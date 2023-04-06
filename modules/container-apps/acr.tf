@@ -8,12 +8,12 @@ resource "azurerm_container_registry" "acr" {
 
   admin_enabled = true
 
-  # identity {
-  #   type = "UserAssigned"
-  #   identity_ids = [
-  #     azurerm_user_assigned_identity.example.id
-  #   ]
-  # }
+  identity {
+    type = "UserAssigned"
+    identity_ids = [
+      # module.identity
+    ]
+  }
 
   # encryption {
   #   enabled            = true

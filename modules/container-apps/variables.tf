@@ -27,8 +27,8 @@ variable "log_analytics_id" {
   type = string
 }
 
-# variable "managed_identity" {
-#   type = object({
-#     client_id = string
-#   })
-# }
+variable "managed_identity" {
+  type = object({
+    client_id = string
+  })
+}

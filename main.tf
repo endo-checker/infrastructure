@@ -80,7 +80,7 @@ module "container-apps" {
   resource_group   = azurerm_resource_group.platform
   subnet_id        = module.vnet.subnets.infrastructure_id
   log_analytics_id = module.insights.log_analytics_id
-  # managed_identity = module.identity.apps
+  managed_identity = module.identity.apps
 }
 
 # # MongoDB Atlas
@@ -113,7 +113,7 @@ module "github" {
   source = "./modules/github"
 
   for_each = toset([
-    "patient", "logger"
+    "patient", "logger", "auth"
   ])
 
   namespace      = local.namespace
